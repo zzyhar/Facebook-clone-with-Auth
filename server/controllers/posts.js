@@ -32,7 +32,7 @@ export const getFeedPosts = async (req, res) => {
   try {
     const post = await Post.find();
     res.status(200).json(post);
-  } catch (error) {
+  } catch (err) {
     res.status(404).json({ message: err.message });
   }
 };
@@ -42,7 +42,7 @@ export const getUserPosts = async (req, res) => {
     const { userId } = req.params;
     const post = await Post.find({ userId });
     res.status(200).json(post);
-  } catch (error) {
+  } catch (err) {
     res.status(404).json({ message: err.message });
   }
 };
@@ -69,7 +69,7 @@ export const likePost = async (req, res) => {
     );
 
     res.status(200).json(updatedPost);
-  } catch (error) {
+  } catch (err) {
     res.status(404).json({ message: err.message });
   }
 };

@@ -18,10 +18,10 @@
   BASE_URL = "https://api.example.com"
 
 [[plugins]]
-  package = "netlify/plugin-env"
+  package = "netlify-plugin-env"
 
 [[plugins]]
-  package = "netlify/plugin-inline-source"
+  package = "netlify-plugin-inline-source"
 
 [[plugins]]
-  package = "netlify/plugin-gzip"
+  package = "netlify-plugin-gzip"

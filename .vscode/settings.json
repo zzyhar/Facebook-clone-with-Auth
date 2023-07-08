@@ -1,0 +1,6 @@
+{
+  "workbench.colorTheme": "Default Dark+",
+  "workbench.preferredHighContrastColorTheme": "Default Dark+",
+  "workbench.preferredHighContrastLightColorTheme": "Default High Contrast Light",
+  "terminal.integrated.minimumContrastRatio": 4.5
+}

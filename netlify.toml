@@ -1,8 +1,39 @@
-[build]
-  command = "npm run build"
-  publish = "build"
+# Build settings
+build:
+  command: npm run build
+  publish: dist/ # The directory containing the built files
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# Deployment settings
+deploy:
+  edge_handlers: true # Enable Edge Handlers for serverless functions
+  provider: netlify
+  site: https://zyharz.netlify.app # Replace with your Netlify site name
+  auth:
+    # Netlify API access token
+    # Make sure to keep it secret by using environment variables or a secure method
+    # Visit https://app.netlify.com/user/applications#personal-access-tokens to generate a token
+    api_token: ${{ secrets.NETLIFY_API_TOKEN }}
+
+# Redirects and rewrites
+# Define custom redirects and rewrites for your project
+# Replace with your own rules as needed
+# Visit https://docs.netlify.com/routing/redirects/ for more information
+redirects:
+  - from: /old-page
+    to: /new-page
+    status: 301
+
+# Environment variables
+# Define any environment variables required for your project
+# Replace with your own variables as needed
+# Visit https://docs.netlify.com/configure-builds/environment-variables/ for more information
+env:
+  API_KEY: your-api-key
+  BASE_URL: https://api.example.com
+
+# Build plugins
+# Enable any Netlify Build plugins you want to use
+# Replace with your own plugin configuration as needed
+# Visit https://docs.netlify.com/configure-builds/build-plugins/ for more information
+plugins:
+  - netlify/plugin-name
